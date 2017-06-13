@@ -1,3 +1,3 @@
 Introduction to Glitch & Javascript
 
-A video of the first online session introducing Glitch
+An outline of the course. A review of the origins and purpose of Javascript. Introduciton to the Glitch platform.
