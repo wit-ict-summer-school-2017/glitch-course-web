@@ -1,0 +1,66 @@
+Sponsor(pub):
+    name: pub 
+    
+Sponsor(newsagent):
+    name: newsagent    
+
+Club(dunmore):
+    name: dunmore
+
+Club(tramore):
+    name: tramore
+    sponsors:
+          - pub
+          - newsagent
+
+Club(fenor):
+    name: fenor
+    sponsors:
+          - newsagent   
+
+Player(jim):
+    name: jim
+    club: dunmore
+
+Player(mary):
+    name: mary
+    club: dunmore
+
+Player(sam):
+    name: sam
+    club: tramore
+
+Player(john):
+    name: john
+    club: tramore
+
+Player(mike):
+    name: mike
+    club: fenor
+
+Player(linda):
+    name: linda
+    club: fenor    
+
+Division(senior):
+    name: senior
+    members:
+            - tramore
+            - dunmore
+
+Division(junior):
+    name: junior
+    members:
+            - fenor
+
+Sponsor(newsagent):
+    name: newsagent
+    support:
+         - tramore
+         - fenor
+
+Sponsor(pub):
+    name: pub 
+    support:
+         - tramore
+

@@ -1,0 +1,44 @@
+#{extends 'main.html' /}
+#{set title:'Sponsors'/}
+
+<nav class="ui menu">
+  <a class="item"         href="/divisions"> Divisions </a>
+  <a class="item"         href="/clubs">     Clubs     </a>
+  <a class="item"         href="/players">   Players   </a>            
+  <a class="active item"  href="/sponsors">  Sponsors  </a>
+</nav>
+
+<section class="ui raised segment">   
+ <h1>Sponsors</h1>
+  <table class="ui table">
+    <thead>
+      <tr>
+        <th>Sponsor</th>
+        <th>Clubs</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+	    #{list items:sponsors, as:'sponsor'}
+	      <tr>
+	        <td>${sponsor.name}</td>
+          <td> 
+            <table class "ui table">
+              <tr>
+               #{list items:sponsor.support, as:'club'}
+                 <td>${club.name}</td> </tr>
+               #{/list}
+               </tr>
+             </table>            
+          </td>
+          <td> 
+            <a class="ui ui icon button" href="/sponsors/delete/${sponsor.id}">
+             <i class="delete red icon"></i>
+            </a> 
+          </td>
+	      </tr>
+	    #{/list}
+    </tbody>
+  </table>
+</section>
+    

@@ -1,0 +1,44 @@
+#{extends 'main.html' /}
+#{set title:'Clubs' /}
+
+<nav class="ui menu">
+  <a class="item"         href="/divisions"> Divisions </a>
+  <a class="active item"  href="/clubs">     Clubs     </a>
+  <a class="item"         href="/players">   Players   </a>            
+  <a class="item"         href="/sponsors">  Sponsors  </a>
+</nav>
+
+<section class="ui raised segment">        
+  <h1>Clubs</h1>
+  <table class="ui table">
+    <thead>
+      <tr>
+        <th>Club</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+	    #{list items:clubs, as:'club'}
+	      <tr>
+	        <td>${club.name}</td>
+	        <td>
+             <table>
+               <tr>
+               #{list items:club.players, as:'player'}
+                 <td>${player.name}</td> </tr>
+               #{/list}
+               </tr>
+             </table>	        
+	        </td>
+          <td> 
+            <a class="ui ui icon button" href="/clubs/delete/${club.id}">
+             <i class="delete red icon"></i>
+            </a> 
+          </td>
+	      </tr>
+	    #{/list}
+    </tbody>
+  </table>
+</section>
+    
